@@ -1,0 +1,86 @@
+* {
+    transition: all 0.3s ease-in-out;
+    will-change: transition;
+}
+
+body {
+    background-color: var(--bg);
+}
+
+.calculator {
+    min-height: 100vh;
+    border-radius: 20px;
+    width: 400px;
+    margin: 20px auto 0;
+    .dark-mode {
+        border-radius: 24px;
+        background-color: var(--semi-black);
+        display: inline-block;
+        margin-bottom: 100px;
+        button {
+            border: none;
+            outline: none;
+            padding: 20px;
+            background: transparent;
+            &.light,
+            &.dark {
+                &.active {
+                    i {
+                        color: var(--white);
+                    }
+                }
+            }
+            &:hover {
+                i {
+                    color: var(--white);
+                }
+            }
+            i {
+                font-size: 30px;
+                color: var(--icon);
+            }
+        }
+    }
+    .output {
+        margin-right: 10px;
+        height: 120px;
+        overflow: hidden;
+        color: var(--white);
+        .previous-operand {
+            font-size: 30px;
+        }
+        .current-operand {
+            font-size: 50px;
+        }
+    }
+    .button-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 40px;
+        background-color: var(--semi-black);
+        padding: 20px 20px 0;
+        button {
+            margin: 0 5px 30px;
+            width: calc(100% / 4 - 10px);
+            border-radius: 14px;
+            font-size: 30px;
+            height: 80px;
+            padding: 20px 0;
+            line-height: 30px;
+            background-color: var(--btn);
+            color: var(--white);
+            outline: none;
+            border: none;
+            box-shadow: none;
+            &.blue {
+                color: #26eeca;
+            }
+            &.red {
+                color: #f67b7b;
+            }
+            &:last-child {
+                width: calc(100% / 2 - 10px);
+            }
+        }
+    }
+}
