@@ -82,6 +82,11 @@ const controller = {
 
         button.addEventListener("click", () => {
             const output = document.querySelector(".output .current-operand");
+            if (
+                output.innerText === "NaN" &&
+                !button.classList.contains("clear")
+            )
+                return;
             if (button.classList.contains("evaluate")) {
                 let result = this.evaluateOperand(output.innerText);
                 if (result && result.toString().length >= 10) {
@@ -159,6 +164,7 @@ const controller = {
     delete() {
         let output = document.querySelector(".output .current-operand");
         let text = output.innerText;
+        if (text === "NaN") return;
         text = text.slice(0, -1);
         output.innerText = text;
     },
